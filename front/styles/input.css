@@ -1,20 +1,20 @@
+/* 기본 스타일 설정 */
 body {
   margin: 0;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-  background-color: transparent;
-  color: #333;
+  font-family: "Pretendard-Regular", Helvetica, Arial, sans-serif;
+  background-color: #2e3338; /* 이미지의 배경색으로 설정 */
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: 50px; /* 하단 여백 추가 */
 }
 
-header {
-  display: none;
-}
-
+/* 메인 컨테이너 스타일 설정 */
 main {
   width: 100%;
   max-width: 800px;
@@ -22,8 +22,10 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px; /* 페이지 시작 시 스크롤 가능하게 함 */
 }
 
+/* 섹션 스타일 설정 */
 .section {
   padding: 20px;
   margin: 20px 0;
@@ -32,26 +34,40 @@ main {
   background-color: #fff;
   width: 100%;
   max-width: 600px;
+  color: #333;
+  text-align: center;
 }
 
+/* 입력 그룹 스타일 설정 */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* 입력 그룹 레이블 스타일 설정 */
+.input-group label {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+/* 입력 필드 스타일 설정 */
 input[type="number"],
 input[type="date"],
-input[type="text"] {
-  width: calc(33.33% - 10px);
-  margin: 10px 5px;
+input[type="text"],
+textarea {
+  width: 80%;
+  margin: 10px 0;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 1.2rem;
 }
 
-input[type="number"]:last-child,
-input[type="date"]:last-child,
-input[type="text"]:last-child {
-  margin-right: 0;
-}
-
+/* 버튼 스타일 설정 */
 button {
-  padding: 10px 20px;
+  padding: 15px 30px;
   border: none;
   background-color: #007bff;
   color: #fff;
@@ -59,30 +75,44 @@ button {
   cursor: pointer;
   display: block;
   margin: 20px auto 0;
+  font-size: 1.2rem;
 }
 
+/* 버튼 호버 스타일 설정 */
 button:hover {
   background-color: #0056b3;
 }
 
+/* 숨김 클래스 */
 .hidden {
   display: none;
 }
 
+/* 필드셋 스타일 설정 */
 fieldset {
   border: none;
   padding: 0;
   margin: 0;
 }
 
+/* 레전드 스타일 설정 */
 legend {
-  font-size: 1.2em;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
+/* 체크박스 그룹 스타일 설정 */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 체크박스 스타일 설정 */
 input:where(.chip[type="checkbox"]) {
   --color: #6c6;
-  font-size: 1rem;
+  font-size: 1.2rem;
   appearance: none;
   position: relative;
   border: 1px solid #0004;
@@ -152,101 +182,45 @@ input:where(.chip[type="checkbox"]):hover:not(:disabled) {
   transition: 0.4s;
 }
 
-@media print {
-  input:where(.chip[type="checkbox"]) {
-    &,
-    &::before,
-    &::after {
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-  }
+/* 체크박스 선택 후 비율 입력 필드 스타일 설정 */
+.checkbox-group + .ratio-input {
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion) {
-  input:where(.chip[type="checkbox"]) {
-    &,
-    &::before,
-    &::after {
-      transition: none !important;
-    }
-  }
+/* 예금, 적금, 주식 컨테이너 스타일 설정 */
+#deposit-container,
+#saving-container,
+#stock-container {
+  margin-bottom: 30px;
 }
 
-@media (prefers-contrast: more) {
-  input:where(.chip[type="checkbox"])::before {
-    background: highlight;
-  }
-
-  input:where(.chip[type="checkbox"]):disabled {
-    border-color: gray-text;
-
-    &::before {
-      background: graytext;
-    }
-
-    &::after {
-      color: graytext;
-    }
-  }
+/* 예금, 적금, 주식 추가 버튼 스타일 설정 */
+#deposit-container button,
+#saving-container button,
+#stock-container button {
+  width: 80%;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
-/* Blob 애니메이션 */
-body {
-  position: relative;
-  overflow: hidden;
+/* 예금, 적금, 주식 입력 필드 스타일 설정 */
+.deposit-entry,
+.saving-entry,
+.stock-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-#blobs {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-.blob {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  animation: blobAnimation 25s infinite;
-  opacity: 0.7;
-}
-
-.blob:nth-child(1) {
-  width: 400px;
-  height: 400px;
-  top: -200px;
-  left: -200px;
-  background: #ff6f61;
-}
-
-.blob:nth-child(2) {
-  width: 300px;
-  height: 300px;
-  top: 50%;
-  left: 10%;
-  background: #6b5b95;
-}
-
-.blob:nth-child(3) {
-  width: 500px;
-  height: 500px;
-  bottom: -250px;
-  right: -250px;
-  background: #88b04b;
-}
-
-@keyframes blobAnimation {
-  0%,
-  100% {
-    transform: scale(1) translate(0, 0);
-  }
-  33% {
-    transform: scale(1.2) translate(10px, -10px);
-  }
-  66% {
-    transform: scale(0.8) translate(-10px, 10px);
-  }
+/* 예금, 적금, 주식 입력 필드 스타일 설정 */
+.deposit-entry input,
+.saving-entry input,
+.stock-entry input {
+  width: 80%;
 }

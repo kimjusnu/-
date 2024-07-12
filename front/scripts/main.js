@@ -64,7 +64,7 @@ function showHomePage() {
       </div>
       <div class="hero">
           <h1>SaveBuddy</h1>
-          <p>당신의 목표 달성을 위해 가장 스마트한 저축 파트너,<br>체계적인 자산 관리로 미래를 위한 저축을 지금 시작하세요</p>
+          <p>당신의 목표 달성을 위한 가장 스마트한 저축 파트너,<br>체계적인 자산 관리로 미래를 위한 저축을 지금 시작하세요</p>
           <button class="btn-3 raise" id="start-button"><span>시작하기</span></button>
       </div>
   `;
