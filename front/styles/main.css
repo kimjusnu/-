@@ -1,0 +1,516 @@
+/* 기본 폰트 및 스타일 설정 */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: black;
+  background-color: rgb(0, 0, 0);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 기본적인 body 스타일 설정 */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* 헤더 스타일 설정 */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* 네비게이션 ul 스타일 설정 */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 네비게이션 li 스타일 설정 */
+nav ul li {
+  margin: 0 1rem;
+}
+
+/* 네비게이션 링크 스타일 설정 */
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* 메인 섹션 스타일 설정 */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  width: 100%;
+  height: calc(
+    100vh - 200px
+  ); /* 헤더와 푸터의 높이를 제외한 높이 설정 (80px * 2) */
+  box-sizing: border-box; /* 패딩을 포함한 박스 크기 설정 */
+  background-color: transparent; /* 배경색을 투명하게 설정 */
+}
+/* 푸터 스타일 설정 */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* 메인페이지 배경 색 */
+.bouncing-blob {
+  width: 32vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transform-origin: left top;
+}
+
+/* 어두운 회색 블롭 */
+.bouncing-blob--dark-gray {
+  background: #222831;
+}
+
+/* 중간 회색 블롭 */
+.bouncing-blob--medium-gray {
+  background: #566783;
+}
+
+/* 청록색 블롭 */
+.bouncing-blob--teal {
+  background: #00adb5;
+}
+
+/* 어두운 파란색 블롭 */
+.bouncing-blob--dark-blue {
+  background: #285049;
+}
+
+/* 흰색 블롭 */
+.bouncing-blob--white {
+  background: #959aa7;
+  z-index: 2;
+  width: 15vw;
+}
+
+/* 블롭 컨테이너 */
+.bouncing-blobs-container {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 블롭 글래스 효과 */
+.bouncing-blobs-glass {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(140px);
+  -webkit-backdrop-filter: blur(140px);
+  pointer-events: none;
+}
+
+/* 블롭들 */
+.bouncing-blobs {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 히어로 섹션 스타일 설정 */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  background-color: transparent; /* 배경색을 투명하게 설정 */
+}
+
+/* 히어로 섹션 제목 스타일 설정 */
+.hero h1 {
+  font-size: 100px;
+  max-width: 100%;
+  line-height: 1;
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  color: #5fce36;
+  font-family: "Cafe24Decoschool", sans-serif;
+}
+
+/* 히어로 섹션 본문 스타일 설정 */
+.hero p {
+  font-size: 20px;
+  max-width: 100%;
+  font-weight: bold;
+  text-align: center;
+  color: #dcdfe4;
+  font-family: "Pretendard-Regular", sans-serif;
+}
+
+/* 미디어 쿼리: 최대 너비 1200px일 때 블롭 글래스 효과 조정 */
+@media (max-width: 1200px) {
+  .bouncing-blobs-glass {
+    backdrop-filter: blur(120px);
+    -webkit-backdrop-filter: blur(120px);
+  }
+}
+
+/* 미디어 쿼리: 최대 너비 500px일 때 블롭 및 히어로 섹션 스타일 조정 */
+@media (max-width: 500px) {
+  .bouncing-blob {
+    width: 60vw;
+  }
+  .bouncing-blob--white {
+    width: 30vw;
+  }
+  .bouncing-blobs-glass {
+    backdrop-filter: blur(90px);
+    -webkit-backdrop-filter: blur(90px);
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+}
+
+/* 튜토리얼 링크 스타일 설정 */
+.tutorial-link a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  gap: 0 5px;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 4px 10px;
+}
+
+/* 튜토리얼 링크 SVG 스타일 설정 */
+.tutorial-link svg {
+  width: 30px;
+}
+
+/* 미디어 쿼리: 최대 너비 500px일 때 튜토리얼 링크 스타일 조정 */
+@media (max-width: 500px) {
+  .tutorial-link a {
+    font-size: 14px;
+    padding: 2px 4px;
+  }
+  .tutorial-link svg {
+    width: 15px;
+  }
+}
+
+/* 새로운 버튼 스타일 설정 */
+.btn-3 {
+  background: rgb(66, 133, 244); /* 이미지와 어울리도록 색상 변경 */
+  background: linear-gradient(
+    0deg,
+    rgba(66, 133, 244, 1) 0%,
+    rgba(52, 103, 193, 1) 100%
+  );
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  color: white; /* 텍스트 색상 흰색으로 설정 */
+  position: relative; /* 포지션 설정 추가 */
+  overflow: hidden; /* overflow 설정 추가 */
+  --hover: rgba(52, 103, 193, 1); /* 변수 설정 */
+  transition: all 0.3s ease;
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 17px;
+}
+
+.btn-3 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* 텍스트가 앞쪽에 보이도록 z-index 설정 */
+}
+
+/* 호버 시 그림자가 생기고 버튼이 살짝 올라가는 스타일 */
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+/* 호버 시 내부 그림자가 아래에서 위로 애니메이션되는 스타일 */
+.up:hover,
+.up:focus {
+  box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+
+/* 기본 스타일링을 유지 */
+/* 새로운 버튼 스타일 설정 */
+.btn-3 {
+  background: #5fce36; /* 기본 배경색 설정 */
+  color: #141414; /* 기본 글씨색 설정 */
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  position: relative; /* 포지션 설정 추가 */
+  overflow: hidden; /* overflow 설정 추가 */
+  --hover: #141414; /* 호버 배경색 */
+  --hover-color: #5fce36; /* 호버 글씨색 */
+  transition: all 0.3s ease;
+}
+
+.btn-3 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* 텍스트가 앞쪽에 보이도록 z-index 설정 */
+}
+
+/* 호버 시 그림자가 생기고 버튼이 살짝 올라가는 스타일 */
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+  background: var(--hover); /* 배경색 변경 */
+  color: var(--hover-color); /* 글씨색 변경 */
+}
+
+/* 호버 시 내부 그림자가 아래에서 위로 애니메이션되는 스타일 */
+.up:hover,
+.up:focus {
+  box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+
+/* 기본 스타일링을 유지 */
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  background: var(--hover); /* 이미지와 어울리도록 색상 변경 */
+  transition: all 0.3s ease;
+}
+
+.btn-3:before {
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+}
+
+.btn-3:after {
+  bottom: 0;
+  right: 0;
+  height: 0;
+  width: 2px;
+}
+
+.btn-3:hover:before {
+  width: 100%;
+}
+
+.btn-3:hover:after {
+  height: 100%;
+}
+
+.btn-3 span:hover {
+  color: var(--hover-color); /* 글씨색 변경 */
+}
+
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: "";
+  background: var(--hover); /* 이미지와 어울리도록 색상 변경 */
+  transition: all 0.3s ease;
+}
+
+.btn-3 span:before {
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  height: 0;
+}
+
+.btn-3 span:after {
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+}
+
+.btn-3 span:hover:before {
+  height: 100%;
+}
+
+.btn-3 span:hover:after {
+  width: 100%;
+}
+
+/* 로그인 모달 스타일 설정 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex; /* Flexbox를 사용하여 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  justify-content: center; /* 수평 가운데 정렬 */
+}
+
+/* 모달 콘텐츠 스타일 설정 */
+.modal-content {
+  background-color: #fefefe;
+  padding: 40px; /* 내부 여백을 40px로 설정 */
+  border: 1px solid #888;
+  width: calc(100% - 40px); /* 전체 너비에서 좌우 여백을 제외한 너비 설정 */
+  max-width: 450px;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 약간의 그림자 효과 추가 */
+  position: relative; /* 닫기 버튼을 절대 위치로 설정할 수 있도록 상대 위치로 설정 */
+}
+
+/* 닫기 버튼 스타일 설정 */
+.close-button {
+  color: #aaa;
+  font-size: 32px; /* 글꼴 크기를 32px로 설정 */
+  font-weight: bold;
+  cursor: pointer; /* 마우스 커서 변경 */
+  position: absolute; /* position을 절대 위치로 설정 */
+  top: 20px; /* 상단 여백을 20px로 설정 */
+  right: 20px; /* 오른쪽 여백을 20px로 설정 */
+}
+
+/* 닫기 버튼 호버 효과 */
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Fade-in animation 설정 */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade-out animation 설정 */
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Fade-out animation 클래스 */
+.fadeOut {
+  -webkit-animation: fadeOut 0.5s;
+  animation: fadeOut 0.5s;
+}
+
+/* 포커스 시 아웃라인 제거 */
+*:focus {
+  outline: none;
+}
+
+/* 기본 박스 크기 설정 */
+* {
+  box-sizing: border-box;
+}
+
+/* 로그인 폼 및 회원가입 폼 스타일 설정 */
+#formContent form {
+  display: none;
+}
+
+#formContent form.activeForm {
+  display: block;
+}
+
+#formContent h2.active {
+  color: #0d0d0d;
+  border-bottom: 2px solid #5fbae9;
+}
+
+#formContent h2.inactive {
+  color: #cccccc;
+}
+
+#formContent h2 {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 15px;
+}

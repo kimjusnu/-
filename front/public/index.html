@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자산 관리 프로젝트</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../public/assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <link rel="stylesheet" href="../styles/input.css" />
+  </head>
+  <body>
+    <div id="blobs">
+      <div class="blob"></div>
+      <div class="blob"></div>
+      <div class="blob"></div>
+    </div>
+    <main id="content">
+      <!-- 동적으로 콘텐츠가 여기에 로드됩니다 -->
+    </main>
+
+    <!-- 모달 -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" id="close-modal">&times;</span>
+        <div id="formContent">
+          <!-- Tabs Titles -->
+          <h2 id="signInTab" class="active">Sign In</h2>
+          <h2 id="signUpTab" class="inactive underlineHover">Sign Up</h2>
+
+          <!-- Login Form -->
+          <form id="signInForm" class="activeForm">
+            <input
+              type="text"
+              id="login"
+              class="fadeIn second"
+              name="login"
+              placeholder="login"
+            />
+            <input
+              type="password"
+              id="password"
+              class="fadeIn third"
+              name="login"
+              placeholder="password"
+            />
+            <input
+              type="button"
+              class="fadeIn fourth"
+              id="signInButton"
+              value="Log In"
+            />
+          </form>
+
+          <!-- Sign Up Form -->
+          <form id="signUpForm">
+            <input
+              type="text"
+              id="signUpUsername"
+              class="fadeIn second"
+              name="username"
+              placeholder="Username"
+            />
+            <input
+              type="password"
+              id="signUpPassword"
+              class="fadeIn third"
+              name="password"
+              placeholder="Password"
+            />
+            <input
+              type="password"
+              id="signUpConfirmPassword"
+              class="fadeIn third"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+            />
+            <input
+              type="button"
+              class="fadeIn fourth"
+              id="signUpButton"
+              value="Sign Up"
+            />
+          </form>
+
+          <!-- Remind Password -->
+          <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="foot">자산관리프로젝트 / Dev 권준수</div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/login.js"></script>
+  </body>
+</html>

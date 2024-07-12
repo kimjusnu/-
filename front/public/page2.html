@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자산 관리 프로젝트 - 페이지 2</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/input.css" />
+  </head>
+  <body>
+    <div id="blobs">
+      <div class="blob"></div>
+      <div class="blob"></div>
+      <div class="blob"></div>
+    </div>
+
+    <main id="content">
+      <section id="input-section" class="section">
+        <h2>금액 입력</h2>
+        <form id="amount-form">
+          <label for="target-amount">목표 금액</label>
+          <input
+            type="number"
+            id="target-amount"
+            name="target-amount"
+            required
+          />
+          <label for="target-year">목표 연도</label>
+          <input type="number" id="target-year" name="target-year" required />
+          <label for="saved-amount">저축한 금액</label>
+          <input type="number" id="saved-amount" name="saved-amount" required />
+          <button type="button" id="nextToHabit">다음</button>
+        </form>
+      </section>
+
+      <section id="habit-section" class="section hidden">
+        <h2>저축 성향 파악</h2>
+        <fieldset>
+          <legend>저축 성향 키워드 선택</legend>
+          <input
+            type="checkbox"
+            class="chip"
+            role="switch"
+            value="예금"
+            aria-label="예금"
+          />
+          <input
+            type="checkbox"
+            class="chip"
+            role="switch"
+            value="적금"
+            aria-label="적금"
+            style="--color: #fd5"
+          />
+          <input
+            type="checkbox"
+            class="chip"
+            role="switch"
+            value="주식"
+            aria-label="주식"
+            style="--color: #f88"
+          />
+        </fieldset>
+        <button type="button" id="nextToAssets">다음</button>
+      </section>
+
+      <section id="assets-section" class="section hidden">
+        <h2>보유 자산 입력</h2>
+        <form id="assets-form">
+          <label for="deposit-amount">예금 정보 입력</label>
+          <input
+            type="number"
+            id="deposit-amount"
+            name="deposit-amount"
+            placeholder="예치한 돈"
+          />
+          <input
+            type="number"
+            id="deposit-interest"
+            name="deposit-interest"
+            placeholder="금리"
+          />
+          <input
+            type="date"
+            id="deposit-maturity"
+            name="deposit-maturity"
+            placeholder="만기일"
+          />
+
+          <label for="saving-amount">적금 정보 입력</label>
+          <input
+            type="number"
+            id="saving-amount"
+            name="saving-amount"
+            placeholder="매달 넣는 돈"
+          />
+          <input
+            type="number"
+            id="saving-interest"
+            name="saving-interest"
+            placeholder="금리"
+          />
+          <input
+            type="date"
+            id="saving-maturity"
+            name="saving-maturity"
+            placeholder="만기일"
+          />
+
+          <label for="stock-amount">주식 정보 입력</label>
+          <input
+            type="number"
+            id="stock-amount"
+            name="stock-amount"
+            placeholder="보유 주식 금액"
+          />
+          <button type="button" id="submitAssets">다음</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="foot">자산관리프로젝트 / Dev 권준수</div>
+    </footer>
+
+    <script src="../scripts/input.js"></script>
+  </body>
+</html>
