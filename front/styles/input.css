@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: "Pretendard-Regular", Helvetica, Arial, sans-serif;
-  background-color: #2e3338; /* 이미지의 배경색으로 설정 */
+  background-color: #2e3338; /* 페이지 배경색 설정 */
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@ body {
 }
 
 /* 메인 컨테이너 스타일 설정 */
-main {
+main#content {
   width: 100%;
   max-width: 800px;
   padding: 20px;
